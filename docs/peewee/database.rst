@@ -137,6 +137,13 @@ If you would like to use these awesome features, use the :py:class:`PostgresqlEx
 
     psql_db = PostgresqlExtDatabase('my_database', user='postgres')
 
+.. _using_firebird:
+
+Using Firebird
+--------------
+
+To connect to a Firebird database, we will use :py:class:`FirebirdDatabase`.
+
 .. _using_sqlite:
 
 Using SQLite
