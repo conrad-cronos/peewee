@@ -133,7 +133,11 @@ elif PY2:
 else:
     raise RuntimeError('Unsupported python version.')
 
-# By default, peewee supports Sqlite, MySQL and Postgresql.
+# By default, peewee supports Sqlite, MySQL, Firebird and Postgresql.
+try:
+    import fdb
+except ImportError:
+   fdb = None
 try:
     import sqlite3
 except ImportError:
@@ -3457,6 +3461,11 @@ class Database(object):
 
     def default_insert_clause(self, model_class):
         return SQL('DEFAULT VALUES')
+
+class FirebirdDatabase(Database):
+    # TODO
+    pass
+
 
 class SqliteDatabase(Database):
     foreign_keys = False
